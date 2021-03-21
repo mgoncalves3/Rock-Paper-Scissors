@@ -12,17 +12,18 @@
 <body>
     <header>
         <h1>Rock, Paper, Scissors</h1>
+        <p>Best of 5</p>
     </header>
 
 
     <div class="scores">
         <div class="player">
-            <h3 class="desc">You</h3>
+            <h3 class="desc" id="player">You</h3>
             <p class="score" id="player-score">0</p>
         </div>
         
         <div class="player">
-            <h3 class="desc">Computer</h3>
+            <h3 class="desc" id="computer">Computer</h3>
             <p class="score" id="computer-score">0</p>
         </div>
     </div>
@@ -34,6 +35,7 @@
 
     <div class="result">
         <h4 id="game-result">Choose</h4>        
+        <button class="reset-btn">Reset</button>
     </div>
 <script src="script.js"></script>
 </body>

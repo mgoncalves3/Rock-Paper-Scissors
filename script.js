@@ -1,5 +1,6 @@
 let playerScoreDisplay = document.querySelector("#player-score");
 let computerScoreDisplay = document.querySelector("#computer-score");
+let gameText = document.querySelector('#game-result');
 let playerScore = 0;
 let computerScore = 0;
 let playerOption;
@@ -19,7 +20,7 @@ playBtns.forEach(button => {
         computerOption = computerChoice();
         let gameResult = game(playerOption, computerOption);
         updateScore(gameResult);
-
+        setTimeout(declareWinner, 200);
     })
 })
 
@@ -28,25 +29,49 @@ function game(player, computer = computerChoice()) {
     if (player === computer) {
         return "draw";
     }
-    if (player === "rock" && computer === "paper") {return "computer"};
-    if (player === "rock" && computer === "scissors") {return "player"};
-    if (player === "paper" && computer === "rock") {return "player"};
-    if (player === "paper" && computer === "scissors") {return "computer"};
-    if (player === "scissors" && computer === "rock") {return "computer"};
-    if (player === "scissors" && computer === "paper") {return "player"};
+    if (player === "rock" && computer === "paper") {return 1};
+    if (player === "rock" && computer === "scissors") {return 0};
+    if (player === "paper" && computer === "rock") {return 0};
+    if (player === "paper" && computer === "scissors") {return 1};
+    if (player === "scissors" && computer === "rock") {return 1};
+    if (player === "scissors" && computer === "paper") {return 0};
 }
 
 function updateScore(result) {
-    let gameText = document.querySelector('#game-result');
 
-    if (result === "player") {
+    if (result === 0) {
         playerScore++;
-        gameText.textContent = `${playerOption.toUpperCase()} beats ${computerOption.toUpperCase()}. You win!`;
         playerScoreDisplay.textContent = `${playerScore}`;
+        gameText.textContent = `${playerOption.toUpperCase()} beats ${computerOption.toUpperCase()}. You win!`;
     }
-    if (result === "computer") {
+    if (result === 1) {
         computerScore++;
-        gameText.textContent = `${computerOption.toUpperCase()} beats ${playerOption.toUpperCase()}. Computer wins.`;
         computerScoreDisplay.textContent = `${computerScore}`;
+        gameText.textContent = `${computerOption.toUpperCase()} beats ${playerOption.toUpperCase()}. Computer wins.`;
+    }
+}
+
+function reset() {
+    playerScore = 0;
+    computerScore = 0;
+    computerScoreDisplay.textContent = 0;
+    playerScoreDisplay.textContent = 0;
+    gameText.textContent = `Game was reset`;
+}
+
+let resetBtn = document.querySelector(".reset-btn");
+
+resetBtn.addEventListener('click', () => {
+    reset();
+});
+
+function declareWinner () {
+    if (playerScoreDisplay.textContent == 5) {
+        alert('You won!');
+        reset();
+    }
+    if (computerScoreDisplay.textContent == 5) {
+        alert('Computer wins.');
+        reset();
     }
 }

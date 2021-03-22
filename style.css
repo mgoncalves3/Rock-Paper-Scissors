@@ -1,68 +1,34 @@
-body {
-    background-image: linear-gradient(to right, #243447, #141d26);
+html {
+    background-color: #f8f5f1;
+    text-align: center;
+    font-weight: 900;
 }
 
 header {
-    color: #ffffff;
+    margin: 50px;
+    font-size: 4em;
     text-align: center;
-    font-size: 2rem;
 }
 
-img {
-    border-radius: 50%;
-    margin: 0 5%;
-    transform: scale(1);
-    transition: all 0.20s ease;
-}
-
-img:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.choices {
-    display: block;
-    margin: 5% auto;
+.grid {
     text-align: center;
-    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    border: solid thin black;
+    margin: 100px auto;
+    width: 540px;
+    height: 540px;
 }
 
-.scores {
-    display: flex;
-    width: 35%;
-    margin: auto;
-    text-align: center;
-    color: #fff;
-}
-.player {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.5rem;
-    margin: 0 10%;
-    width: 200px;
-    height: auto;
-}
-
-.desc {
-    border-bottom: solid thin #fff;
-    padding-bottom: 15px;
-}
-
-.score {
-    font-size: 2.5rem;
+.box {
+    border: solid thin black;
+    padding: auto;
     margin: 0;
+    background-color: none;
 }
 
-.result {
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    font-size: 2rem;
-}
-
-.reset-btn {
-    width: 10%;
-    padding: 12px;
-    font-size: 1.5vw;
-    text-align: center;
+#change-size-btn {
+    padding: 15px;
+    font-size: 1.2em;
 }

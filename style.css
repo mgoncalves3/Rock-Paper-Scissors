@@ -1,0 +1,68 @@
+body {
+    background-image: linear-gradient(to right, #243447, #141d26);
+}
+
+header {
+    color: #ffffff;
+    text-align: center;
+    font-size: 2rem;
+}
+
+img {
+    border-radius: 50%;
+    margin: 0 5%;
+    transform: scale(1);
+    transition: all 0.20s ease;
+}
+
+img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.choices {
+    display: block;
+    margin: 5% auto;
+    text-align: center;
+    width: 50%;
+}
+
+.scores {
+    display: flex;
+    width: 35%;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+}
+.player {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    margin: 0 10%;
+    width: 200px;
+    height: auto;
+}
+
+.desc {
+    border-bottom: solid thin #fff;
+    padding-bottom: 15px;
+}
+
+.score {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.result {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.reset-btn {
+    width: 10%;
+    padding: 12px;
+    font-size: 1.5vw;
+    text-align: center;
+}
